@@ -1,0 +1,72 @@
+Method to add slave in jenkins
+------------------------------------------
+
+# get instance with password authunticated 
+  and install/ check for java init
+
+# process to install java
+# add PPA repo
+sudo add-apt-repository ppa:openjdk-r/ppa
+
+# Install OpenJDK
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+
+# Switch to Java 8
+sudo update-alternatives --config java
+
+# Check Java installation
+java -version
+
+
+
+# Path  change ssh
+----------------------
+/etc/ssh/sshd_config  
+----------------------
+Ctl+W for Search
+
+# Change passwordauthentication No to Yes for useing password login
+# Method to change password
+# if using ubuntu
+------------------------
+passwrd uduntu 
+-------------------------
+# enter new password and renter the same to update
+# Then resart the service of ssh using
+------------------------
+service ssh restart
+------------------------
+
+configure with master jenkins
+------------------------------
+
+Step 1 : 
+Then go to jenkins master and add the credentials 
+chosee for username and ssh then enter the user "ubuntu"
+and copy paste the ssh pem file keyand save
+
+Step 2 :
+Then togo manage jenkins and choose for manage NODE
+here create a new node 
+
+a ) Enter Name
+b ) Remote root director  /home/ubuntu
+c ) Label  testing
+d ) Launch method agent visa SSH
+e ) Host ip of instance
+f ) slecet the credentials
+ 
+
+and hit save.
+
+# add job to slave
+-----------------
+same step to create the general job 
+keep change at
+
+Restrict where this project can be run
+
+choose the above option and select "testing"
+
+hit save.
