@@ -7,7 +7,7 @@
 	<name>${project.artifactId}-${project.version}</name>
 
 	<properties>
-		<jnuit.version>4.12</jnuit.version>
+		<jnuit.version>4.13.1</jnuit.version>
 		<project.scm.id>github</project.scm.id>
 		<!-- <github.global.server>github</github.global.server> -->
 		<!-- <argLine>-XX:MaxPermSize=512m</argLine> -->
